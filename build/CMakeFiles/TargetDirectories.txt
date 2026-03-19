@@ -1,0 +1,3 @@
+D:/Projects/Flower exchange/build/CMakeFiles/exchange.dir
+D:/Projects/Flower exchange/build/CMakeFiles/edit_cache.dir
+D:/Projects/Flower exchange/build/CMakeFiles/rebuild_cache.dir
