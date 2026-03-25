@@ -11,5 +11,17 @@ class Order {
         int mQuantity;
 
     public:
-        
+        // Getters
+        std::string getClientOrderId() const { return mClientOrderId; }
+        std::string getInstrument() const { return mInstrument; }
+        int getSide() const { return mSide; }
+        double getPrice() const { return mPrice; }
+        int getQuantity() const { return mQuantity; }
+
+        // Setters
+        void setClientOrderId(const std::string& clientOrderId) { mClientOrderId = clientOrderId; }
+        void setInstrument(const std::string& instrument) { mInstrument = instrument; }
+        void setSide(int side) { mSide = side; }
+        void setPrice(double price) { mPrice = price; }
+        void setQuantity(int quantity) { mQuantity = quantity; }
 };
