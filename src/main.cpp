@@ -43,14 +43,14 @@
 #include "utils/CSVParser.hpp"
 #include "utils/ExecutionReportWriter.hpp"
 #include "exchange/Exchange.hpp"
-#include "model/Order.hpp"  // ✅ ADD THIS
+#include "model/Order.hpp"  
 
 #include <iostream>
 #include <vector>
 #include <stdexcept>
 
 int main() {
-    const std::string inputFile = "../data/orders.csv";
+    const std::string inputFile = "../data/test_case_1_basic.csv";
     const std::string outputFile = "../output/execution_report.csv";
 
     try {
@@ -58,9 +58,12 @@ int main() {
         std::vector<Order> orders = CSVParser::parse(inputFile);
 
         if (orders.empty()) {
-            std::cerr << "ERROR: No orders found in input file.\n";  // ✅ Use cerr
+            std::cerr << "ERROR: No orders found in input file.\n";  
             return 1;
         }
+
+        
+        
 
         // Step 2: Create Exchange
         Exchange exchange;

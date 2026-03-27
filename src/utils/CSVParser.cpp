@@ -26,12 +26,11 @@ std::vector<Order> CSVParser::parse(const std::string& filePath) {
         o.setSide((token == "BUY") ? 1 : 2);
 
         std::getline(ss, token, ',');
-        o.setPrice(std::stod(token));
-
-        std::getline(ss, token, ',');
         o.setQuantity(std::stoi(token));
 
-        // ✅ Assign sequence
+        std::getline(ss, token, ',');
+        o.setPrice(std::stod(token));
+
         o.setSequence(sequence++);
 
         orders.push_back(o);

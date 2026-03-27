@@ -1,2 +1,4 @@
 Cl.Ord.ID,Instrument,Side,Quantity,Price
 aa13,ROSE,2,100,55.0
+aa14,ROSE,2,100,45.0
+aa15,ROSE,1,200,45.0

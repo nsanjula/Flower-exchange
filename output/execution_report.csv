@@ -1,2 +1,2 @@
 ClientOrderId,OrderId,Instrument,Side,Price,Quantity,Status,Reason,TransactionTime
-aa13,,Rose,2,100,55,1,Invalid instrument,2026-03-27 08:48:11
+aa13,,ROSE,2,100,55,1,Quantity must be multiple of 10,2026-03-27 09:05:12
