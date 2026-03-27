@@ -71,10 +71,26 @@ include CMakeFiles/exchange.dir/flags.make
 CMakeFiles/exchange.dir/codegen:
 .PHONY : CMakeFiles/exchange.dir/codegen
 
+CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.obj: CMakeFiles/exchange.dir/flags.make
+CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.obj: CMakeFiles/exchange.dir/includes_CXX.rsp
+CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.obj: D:/Projects/Flower\ exchange/src/exchange/Exchange.cpp
+CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.obj: CMakeFiles/exchange.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Projects\Flower exchange\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.obj -MF CMakeFiles\exchange.dir\src\exchange\Exchange.cpp.obj.d -o CMakeFiles\exchange.dir\src\exchange\Exchange.cpp.obj -c "D:\Projects\Flower exchange\src\exchange\Exchange.cpp"
+
+CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Projects\Flower exchange\src\exchange\Exchange.cpp" > CMakeFiles\exchange.dir\src\exchange\Exchange.cpp.i
+
+CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Projects\Flower exchange\src\exchange\Exchange.cpp" -o CMakeFiles\exchange.dir\src\exchange\Exchange.cpp.s
+
 CMakeFiles/exchange.dir/src/main.cpp.obj: CMakeFiles/exchange.dir/flags.make
+CMakeFiles/exchange.dir/src/main.cpp.obj: CMakeFiles/exchange.dir/includes_CXX.rsp
 CMakeFiles/exchange.dir/src/main.cpp.obj: D:/Projects/Flower\ exchange/src/main.cpp
 CMakeFiles/exchange.dir/src/main.cpp.obj: CMakeFiles/exchange.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Projects\Flower exchange\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/exchange.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Projects\Flower exchange\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/exchange.dir/src/main.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exchange.dir/src/main.cpp.obj -MF CMakeFiles\exchange.dir\src\main.cpp.obj.d -o CMakeFiles\exchange.dir\src\main.cpp.obj -c "D:\Projects\Flower exchange\src\main.cpp"
 
 CMakeFiles/exchange.dir/src/main.cpp.i: cmake_force
@@ -85,19 +101,106 @@ CMakeFiles/exchange.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/exchange.dir/src/main.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Projects\Flower exchange\src\main.cpp" -o CMakeFiles\exchange.dir\src\main.cpp.s
 
+CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.obj: CMakeFiles/exchange.dir/flags.make
+CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.obj: CMakeFiles/exchange.dir/includes_CXX.rsp
+CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.obj: D:/Projects/Flower\ exchange/src/matchingengine/MatchingEngine.cpp
+CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.obj: CMakeFiles/exchange.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Projects\Flower exchange\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.obj -MF CMakeFiles\exchange.dir\src\matchingengine\MatchingEngine.cpp.obj.d -o CMakeFiles\exchange.dir\src\matchingengine\MatchingEngine.cpp.obj -c "D:\Projects\Flower exchange\src\matchingengine\MatchingEngine.cpp"
+
+CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Projects\Flower exchange\src\matchingengine\MatchingEngine.cpp" > CMakeFiles\exchange.dir\src\matchingengine\MatchingEngine.cpp.i
+
+CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Projects\Flower exchange\src\matchingengine\MatchingEngine.cpp" -o CMakeFiles\exchange.dir\src\matchingengine\MatchingEngine.cpp.s
+
+CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.obj: CMakeFiles/exchange.dir/flags.make
+CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.obj: CMakeFiles/exchange.dir/includes_CXX.rsp
+CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.obj: D:/Projects/Flower\ exchange/src/orderbook/OrderBook.cpp
+CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.obj: CMakeFiles/exchange.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Projects\Flower exchange\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.obj -MF CMakeFiles\exchange.dir\src\orderbook\OrderBook.cpp.obj.d -o CMakeFiles\exchange.dir\src\orderbook\OrderBook.cpp.obj -c "D:\Projects\Flower exchange\src\orderbook\OrderBook.cpp"
+
+CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Projects\Flower exchange\src\orderbook\OrderBook.cpp" > CMakeFiles\exchange.dir\src\orderbook\OrderBook.cpp.i
+
+CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Projects\Flower exchange\src\orderbook\OrderBook.cpp" -o CMakeFiles\exchange.dir\src\orderbook\OrderBook.cpp.s
+
+CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.obj: CMakeFiles/exchange.dir/flags.make
+CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.obj: CMakeFiles/exchange.dir/includes_CXX.rsp
+CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.obj: D:/Projects/Flower\ exchange/src/utils/CSVParser.cpp
+CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.obj: CMakeFiles/exchange.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Projects\Flower exchange\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.obj -MF CMakeFiles\exchange.dir\src\utils\CSVParser.cpp.obj.d -o CMakeFiles\exchange.dir\src\utils\CSVParser.cpp.obj -c "D:\Projects\Flower exchange\src\utils\CSVParser.cpp"
+
+CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Projects\Flower exchange\src\utils\CSVParser.cpp" > CMakeFiles\exchange.dir\src\utils\CSVParser.cpp.i
+
+CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Projects\Flower exchange\src\utils\CSVParser.cpp" -o CMakeFiles\exchange.dir\src\utils\CSVParser.cpp.s
+
+CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.obj: CMakeFiles/exchange.dir/flags.make
+CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.obj: CMakeFiles/exchange.dir/includes_CXX.rsp
+CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.obj: D:/Projects/Flower\ exchange/src/utils/ExecutionReportWriter.cpp
+CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.obj: CMakeFiles/exchange.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Projects\Flower exchange\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.obj -MF CMakeFiles\exchange.dir\src\utils\ExecutionReportWriter.cpp.obj.d -o CMakeFiles\exchange.dir\src\utils\ExecutionReportWriter.cpp.obj -c "D:\Projects\Flower exchange\src\utils\ExecutionReportWriter.cpp"
+
+CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Projects\Flower exchange\src\utils\ExecutionReportWriter.cpp" > CMakeFiles\exchange.dir\src\utils\ExecutionReportWriter.cpp.i
+
+CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Projects\Flower exchange\src\utils\ExecutionReportWriter.cpp" -o CMakeFiles\exchange.dir\src\utils\ExecutionReportWriter.cpp.s
+
+CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.obj: CMakeFiles/exchange.dir/flags.make
+CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.obj: CMakeFiles/exchange.dir/includes_CXX.rsp
+CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.obj: D:/Projects/Flower\ exchange/src/validator/OrderValidator.cpp
+CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.obj: CMakeFiles/exchange.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="D:\Projects\Flower exchange\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.obj -MF CMakeFiles\exchange.dir\src\validator\OrderValidator.cpp.obj.d -o CMakeFiles\exchange.dir\src\validator\OrderValidator.cpp.obj -c "D:\Projects\Flower exchange\src\validator\OrderValidator.cpp"
+
+CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "D:\Projects\Flower exchange\src\validator\OrderValidator.cpp" > CMakeFiles\exchange.dir\src\validator\OrderValidator.cpp.i
+
+CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "D:\Projects\Flower exchange\src\validator\OrderValidator.cpp" -o CMakeFiles\exchange.dir\src\validator\OrderValidator.cpp.s
+
 # Object files for target exchange
 exchange_OBJECTS = \
-"CMakeFiles/exchange.dir/src/main.cpp.obj"
+"CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.obj" \
+"CMakeFiles/exchange.dir/src/main.cpp.obj" \
+"CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.obj" \
+"CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.obj" \
+"CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.obj" \
+"CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.obj" \
+"CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.obj"
 
 # External object files for target exchange
 exchange_EXTERNAL_OBJECTS =
 
+exchange.exe: CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.obj
 exchange.exe: CMakeFiles/exchange.dir/src/main.cpp.obj
+exchange.exe: CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.obj
+exchange.exe: CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.obj
+exchange.exe: CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.obj
+exchange.exe: CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.obj
+exchange.exe: CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.obj
 exchange.exe: CMakeFiles/exchange.dir/build.make
 exchange.exe: CMakeFiles/exchange.dir/linkLibs.rsp
 exchange.exe: CMakeFiles/exchange.dir/objects1.rsp
 exchange.exe: CMakeFiles/exchange.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="D:\Projects\Flower exchange\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable exchange.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="D:\Projects\Flower exchange\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable exchange.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\exchange.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

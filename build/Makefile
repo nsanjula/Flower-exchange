@@ -128,6 +128,30 @@ exchange/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/build
 .PHONY : exchange/fast
 
+src/exchange/Exchange.obj: src/exchange/Exchange.cpp.obj
+.PHONY : src/exchange/Exchange.obj
+
+# target to build an object file
+src/exchange/Exchange.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.obj
+.PHONY : src/exchange/Exchange.cpp.obj
+
+src/exchange/Exchange.i: src/exchange/Exchange.cpp.i
+.PHONY : src/exchange/Exchange.i
+
+# target to preprocess a source file
+src/exchange/Exchange.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.i
+.PHONY : src/exchange/Exchange.cpp.i
+
+src/exchange/Exchange.s: src/exchange/Exchange.cpp.s
+.PHONY : src/exchange/Exchange.s
+
+# target to generate assembly for a file
+src/exchange/Exchange.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/exchange/Exchange.cpp.s
+.PHONY : src/exchange/Exchange.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -152,6 +176,126 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/matchingengine/MatchingEngine.obj: src/matchingengine/MatchingEngine.cpp.obj
+.PHONY : src/matchingengine/MatchingEngine.obj
+
+# target to build an object file
+src/matchingengine/MatchingEngine.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.obj
+.PHONY : src/matchingengine/MatchingEngine.cpp.obj
+
+src/matchingengine/MatchingEngine.i: src/matchingengine/MatchingEngine.cpp.i
+.PHONY : src/matchingengine/MatchingEngine.i
+
+# target to preprocess a source file
+src/matchingengine/MatchingEngine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.i
+.PHONY : src/matchingengine/MatchingEngine.cpp.i
+
+src/matchingengine/MatchingEngine.s: src/matchingengine/MatchingEngine.cpp.s
+.PHONY : src/matchingengine/MatchingEngine.s
+
+# target to generate assembly for a file
+src/matchingengine/MatchingEngine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/matchingengine/MatchingEngine.cpp.s
+.PHONY : src/matchingengine/MatchingEngine.cpp.s
+
+src/orderbook/OrderBook.obj: src/orderbook/OrderBook.cpp.obj
+.PHONY : src/orderbook/OrderBook.obj
+
+# target to build an object file
+src/orderbook/OrderBook.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.obj
+.PHONY : src/orderbook/OrderBook.cpp.obj
+
+src/orderbook/OrderBook.i: src/orderbook/OrderBook.cpp.i
+.PHONY : src/orderbook/OrderBook.i
+
+# target to preprocess a source file
+src/orderbook/OrderBook.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.i
+.PHONY : src/orderbook/OrderBook.cpp.i
+
+src/orderbook/OrderBook.s: src/orderbook/OrderBook.cpp.s
+.PHONY : src/orderbook/OrderBook.s
+
+# target to generate assembly for a file
+src/orderbook/OrderBook.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/orderbook/OrderBook.cpp.s
+.PHONY : src/orderbook/OrderBook.cpp.s
+
+src/utils/CSVParser.obj: src/utils/CSVParser.cpp.obj
+.PHONY : src/utils/CSVParser.obj
+
+# target to build an object file
+src/utils/CSVParser.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.obj
+.PHONY : src/utils/CSVParser.cpp.obj
+
+src/utils/CSVParser.i: src/utils/CSVParser.cpp.i
+.PHONY : src/utils/CSVParser.i
+
+# target to preprocess a source file
+src/utils/CSVParser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.i
+.PHONY : src/utils/CSVParser.cpp.i
+
+src/utils/CSVParser.s: src/utils/CSVParser.cpp.s
+.PHONY : src/utils/CSVParser.s
+
+# target to generate assembly for a file
+src/utils/CSVParser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/utils/CSVParser.cpp.s
+.PHONY : src/utils/CSVParser.cpp.s
+
+src/utils/ExecutionReportWriter.obj: src/utils/ExecutionReportWriter.cpp.obj
+.PHONY : src/utils/ExecutionReportWriter.obj
+
+# target to build an object file
+src/utils/ExecutionReportWriter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.obj
+.PHONY : src/utils/ExecutionReportWriter.cpp.obj
+
+src/utils/ExecutionReportWriter.i: src/utils/ExecutionReportWriter.cpp.i
+.PHONY : src/utils/ExecutionReportWriter.i
+
+# target to preprocess a source file
+src/utils/ExecutionReportWriter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.i
+.PHONY : src/utils/ExecutionReportWriter.cpp.i
+
+src/utils/ExecutionReportWriter.s: src/utils/ExecutionReportWriter.cpp.s
+.PHONY : src/utils/ExecutionReportWriter.s
+
+# target to generate assembly for a file
+src/utils/ExecutionReportWriter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/utils/ExecutionReportWriter.cpp.s
+.PHONY : src/utils/ExecutionReportWriter.cpp.s
+
+src/validator/OrderValidator.obj: src/validator/OrderValidator.cpp.obj
+.PHONY : src/validator/OrderValidator.obj
+
+# target to build an object file
+src/validator/OrderValidator.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.obj
+.PHONY : src/validator/OrderValidator.cpp.obj
+
+src/validator/OrderValidator.i: src/validator/OrderValidator.cpp.i
+.PHONY : src/validator/OrderValidator.i
+
+# target to preprocess a source file
+src/validator/OrderValidator.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.i
+.PHONY : src/validator/OrderValidator.cpp.i
+
+src/validator/OrderValidator.s: src/validator/OrderValidator.cpp.s
+.PHONY : src/validator/OrderValidator.s
+
+# target to generate assembly for a file
+src/validator/OrderValidator.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\exchange.dir\build.make CMakeFiles/exchange.dir/src/validator/OrderValidator.cpp.s
+.PHONY : src/validator/OrderValidator.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -161,9 +305,27 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... exchange
+	@echo ... src/exchange/Exchange.obj
+	@echo ... src/exchange/Exchange.i
+	@echo ... src/exchange/Exchange.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/matchingengine/MatchingEngine.obj
+	@echo ... src/matchingengine/MatchingEngine.i
+	@echo ... src/matchingengine/MatchingEngine.s
+	@echo ... src/orderbook/OrderBook.obj
+	@echo ... src/orderbook/OrderBook.i
+	@echo ... src/orderbook/OrderBook.s
+	@echo ... src/utils/CSVParser.obj
+	@echo ... src/utils/CSVParser.i
+	@echo ... src/utils/CSVParser.s
+	@echo ... src/utils/ExecutionReportWriter.obj
+	@echo ... src/utils/ExecutionReportWriter.i
+	@echo ... src/utils/ExecutionReportWriter.s
+	@echo ... src/validator/OrderValidator.obj
+	@echo ... src/validator/OrderValidator.i
+	@echo ... src/validator/OrderValidator.s
 .PHONY : help
 
 

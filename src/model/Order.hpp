@@ -9,6 +9,7 @@ class Order {
         int mSide;   // 1: buy, 2:sell
         double mPrice;
         int mQuantity;
+        int mSequence;
 
     public:
         // Getters
@@ -17,6 +18,7 @@ class Order {
         int getSide() const { return mSide; }
         double getPrice() const { return mPrice; }
         int getQuantity() const { return mQuantity; }
+        int getSequence() const { return mSequence; }
 
         // Setters
         void setClientOrderId(const std::string& clientOrderId) { mClientOrderId = clientOrderId; }
@@ -24,4 +26,12 @@ class Order {
         void setSide(int side) { mSide = side; }
         void setPrice(double price) { mPrice = price; }
         void setQuantity(int quantity) { mQuantity = quantity; }
+        void setSequence(int sequence) { mSequence = sequence; }
+
+        // Reduce quantity after trade
+        void reduceQuantity(int qty) {
+            mQuantity -= qty;
+        }
+
+
 };
