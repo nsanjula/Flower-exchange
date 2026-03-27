@@ -20,4 +20,6 @@ void ExecutionReportWriter::write(const std::string& filePath,
              << report.getTransactionTime()
              << "\n";
     }
+
+    file.close();
 }

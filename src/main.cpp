@@ -50,7 +50,19 @@
 #include <stdexcept>
 
 int main() {
-    const std::string inputFile = "../data/test_case_1_basic.csv";
+    std::string filename;
+
+    // Get input filename from user
+    std::cout << "Enter input CSV filename (e.g., test_case_1_basic.csv): ";
+    std::getline(std::cin, filename);
+
+    if (filename.empty()) {
+        std::cerr << "ERROR: Filename cannot be empty.\n";
+        return 1;
+    }
+
+    // Construct full input file path
+    const std::string inputFile = "../data/" + filename;
     const std::string outputFile = "../output/execution_report.csv";
 
     try {
@@ -62,8 +74,7 @@ int main() {
             return 1;
         }
 
-        
-        
+        std::cout << "Successfully parsed " << orders.size() << " orders from input file.\n";
 
         // Step 2: Create Exchange
         Exchange exchange;
@@ -81,6 +92,7 @@ int main() {
 
         std::cout << "Processing completed.\n";
         std::cout << "Execution report written to: " << outputFile << "\n";
+        std::cout << "Total execution reports: " << reports.size() << "\n";
 
     } catch (const std::exception& e) {
         std::cerr << "ERROR: " << e.what() << "\n";
