@@ -5,7 +5,6 @@
 class InstrumentValidation : public ValidationRule {
 private:
     std::unordered_set<std::string> validInstruments{
-        // "Rose", "LAVENDER", "LOTUS", "TULIP", "ORCHID"
         "Rose", "Lavender", "Lotus", "Tulip", "Orchid" 
     };
 

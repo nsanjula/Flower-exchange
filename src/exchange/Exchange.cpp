@@ -53,35 +53,62 @@ void Exchange::processOrder(const Order& order) {
     int originalQty = orderPtr->getQuantity();
 
     // Matching
-    auto trades = engine.processOrder(orderPtr);
+    auto trades = engine.processOrder(orderPtr, order.getInstrument());
 
     int remainingQty = orderPtr->getQuantity();
 
-    int status;
-    std::string reasonText = "";
-
-    if (remainingQty == 0) {
-        status = 2; // FILLED
-    } else if (remainingQty < originalQty) {
-        status = 3; // PARTIALLY_FILLED
-    } else {
-        status = 0; // NEW (no match, added to book)
+    // Create execution report for each trade
+    for (const auto& trade : trades) {
+        ExecutionReport tradeReport(
+            order.getClientOrderId(),
+            orderId,
+            order.getInstrument(),
+            order.getSide(),
+            trade.getPrice(),
+            trade.getQuantity(),
+            2, // FILLED (each trade is a partial fill execution)
+            "",
+            getCurrentTime()
+        );
+        reports.push_back(tradeReport);
     }
 
-    // Create ExecutionReport
-    ExecutionReport report(
-        order.getClientOrderId(),
-        orderId,
-        order.getInstrument(),
-        order.getSide(),
-        order.getPrice(),
-        originalQty,
-        status,
-        reasonText,
-        getCurrentTime()
-    );
+    // Create final execution report for remaining quantity
+    if (remainingQty > 0) {
+        int finalStatus;
+        if (remainingQty < originalQty) {
+            finalStatus = 3; // PARTIALLY_FILLED
+        } else {
+            finalStatus = 0; // NEW (no matches, added to book)
+        }
 
-    reports.push_back(report);
+        ExecutionReport finalReport(
+            order.getClientOrderId(),
+            orderId,
+            order.getInstrument(),
+            order.getSide(),
+            order.getPrice(),
+            remainingQty,
+            finalStatus,
+            "",
+            getCurrentTime()
+        );
+        reports.push_back(finalReport);
+    } else if (trades.empty()) {
+        // If no trades occurred but no remaining qty (shouldn't happen), report as FILLED
+        ExecutionReport finalReport(
+            order.getClientOrderId(),
+            orderId,
+            order.getInstrument(),
+            order.getSide(),
+            order.getPrice(),
+            originalQty,
+            2, // FILLED
+            "",
+            getCurrentTime()
+        );
+        reports.push_back(finalReport);
+    }
 }
 
 const std::vector<ExecutionReport>& Exchange::getReports() const {
