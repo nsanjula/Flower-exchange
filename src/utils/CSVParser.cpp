@@ -6,34 +6,40 @@ std::vector<Order> CSVParser::parse(const std::string& filePath) {
     std::vector<Order> orders;
     std::ifstream file(filePath);
 
+    // Throwing an error if the file opening failed
+    if (!file.is_open()) {
+        throw std::runtime_error("Failed to open file: " + filePath);
+    }
+
     std::string line;
     std::getline(file, line);
 
     int sequence = 0;
 
+    // Looping through each line of the CSV file (except the header) and creating an order object and adding it to orders vector
     while (std::getline(file, line)) {
         std::stringstream ss(line);
         std::string token;
-        Order o;
+        Order order;
 
         std::getline(ss, token, ',');
-        o.setClientOrderId(token);
+        order.setClientOrderId(token);
 
         std::getline(ss, token, ',');
-        o.setInstrument(token);
+        order.setInstrument(token);
 
         std::getline(ss, token, ',');
-        o.setSide((token == "BUY") ? 1 : 2);
+        order.setSide(std::stoi(token));
 
         std::getline(ss, token, ',');
-        o.setQuantity(std::stoi(token));
+        order.setQuantity(std::stoi(token));
 
         std::getline(ss, token, ',');
-        o.setPrice(std::stod(token));
+        order.setPrice(std::stod(token));
 
-        o.setSequence(sequence++);
+        order.setSequence(sequence++);
 
-        orders.push_back(o);
+        orders.push_back(order);
     }
 
     return orders;

@@ -10,13 +10,17 @@ void OrderBook::addOrder(const std::shared_ptr<Order>& order) {
 
 bool OrderBook::hasMatch(const Order& incoming) const {
     if (incoming.getSide() == 1) { // BUY
-        if (sellOrders.empty()) return false;
+        if (sellOrders.empty()) {
+            return false;
+        }
 
         auto bestSell = *sellOrders.begin();
         return incoming.getPrice() >= bestSell->getPrice();
 
     } else { // SELL
-        if (buyOrders.empty()) return false;
+        if (buyOrders.empty()){
+            return false;
+        }
 
         auto bestBuy = *buyOrders.begin();
         return incoming.getPrice() <= bestBuy->getPrice();

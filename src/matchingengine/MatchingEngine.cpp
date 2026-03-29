@@ -60,24 +60,23 @@
 std::vector<Trade> MatchingEngine::processOrder(std::shared_ptr<Order> incoming) {
     std::vector<Trade> trades;
 
-    while (incoming->getQuantity() > 0 &&
-           orderBook.hasMatch(*incoming)) {
+    while (orderBook.hasMatch(*incoming)) {
 
         if (incoming->getSide() == 1) { // BUY
             auto bestSell = orderBook.getBestSell();
 
             int tradedQty = std::min(incoming->getQuantity(), bestSell->getQuantity());
-            double tradePrice = bestSell->getPrice();
+            double tradePrice = bestSell->getPrice();   // ****
 
-            trades.emplace_back(*incoming, *bestSell, tradedQty, tradePrice);
+            trades.emplace_back(*incoming, *bestSell, tradedQty, tradePrice);   // creating the Trade object directly inside the vector
 
             incoming->reduceQuantity(tradedQty);
             bestSell->reduceQuantity(tradedQty);
 
-            orderBook.removeBestSell();
+            orderBook.removeBestSell();     // To maintain the structure of the priority queue
 
             if (bestSell->getQuantity() > 0) {
-                orderBook.addOrder(bestSell);
+                orderBook.addOrder(bestSell);   // Adding that bestsell again (with updated quantities)
             }
 
         } else { // SELL

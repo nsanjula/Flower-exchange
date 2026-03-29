@@ -22,13 +22,14 @@ std::string Exchange::getCurrentTime() const {
 
 void Exchange::processOrder(const Order& order) {
     std::string reason;
+    std::string orderId = generateOrderId();
 
-    // Step 1: Validate
+    // Validate
     if (!validator.validate(order, reason)) {
 
         ExecutionReport report(
             order.getClientOrderId(),
-            "", // No OrderId for rejected
+            orderId, 
             order.getInstrument(),
             order.getSide(),
             order.getPrice(),
@@ -42,15 +43,16 @@ void Exchange::processOrder(const Order& order) {
         return;
     }
 
-    // Step 2: Valid order
-    std::string orderId = generateOrderId();
+    // For a valid order
 
     // Convert to shared_ptr (required by MatchingEngine)
+    // Shared pointers are used because multiple classes will poitn to this Order object
+    // Also they are smart pointers which will be deleted automatically after no one is pointing to that 
     auto orderPtr = std::make_shared<Order>(order);
 
     int originalQty = orderPtr->getQuantity();
 
-    // Step 3: Matching
+    // Matching
     auto trades = engine.processOrder(orderPtr);
 
     int remainingQty = orderPtr->getQuantity();
@@ -66,7 +68,7 @@ void Exchange::processOrder(const Order& order) {
         status = 0; // NEW (no match, added to book)
     }
 
-    // Step 4: Create ExecutionReport
+    // Create ExecutionReport
     ExecutionReport report(
         order.getClientOrderId(),
         orderId,
