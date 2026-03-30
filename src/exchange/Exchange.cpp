@@ -7,7 +7,7 @@
 Exchange::Exchange() : orderIdCounter(1) {}
 
 std::string Exchange::generateOrderId() {
-    return "ORD" + std::to_string(orderIdCounter++);
+    return "ord" + std::to_string(orderIdCounter++);
 }
 
 std::string Exchange::getCurrentTime() const {
@@ -22,19 +22,20 @@ std::string Exchange::getCurrentTime() const {
 
 void Exchange::processOrder(const Order& order) {
     std::string reason;
-    std::string orderId = generateOrderId();
 
     // Validate
     if (!validator.validate(order, reason)) {
+        // Rejected orders never consume a system OrderID and do not touch the book.
+        const std::string emptyOrderId = "";
 
         ExecutionReport report(
             order.getClientOrderId(),
-            orderId, 
+            emptyOrderId, 
             order.getInstrument(),
             order.getSide(),
             order.getPrice(),
             order.getQuantity(),
-            1, // REJECTED
+            "Rejected",
             reason,
             getCurrentTime()
         );
@@ -44,70 +45,68 @@ void Exchange::processOrder(const Order& order) {
     }
 
     // For a valid order
+    std::string orderId = generateOrderId();
 
     // Convert to shared_ptr (required by MatchingEngine)
     // Shared pointers are used because multiple classes will poitn to this Order object
     // Also they are smart pointers which will be deleted automatically after no one is pointing to that 
     auto orderPtr = std::make_shared<Order>(order);
+    orderPtr->setOrderId(orderId); // assign system OrderID to this (incoming) order
 
     int originalQty = orderPtr->getQuantity();
 
     // Matching
     auto trades = engine.processOrder(orderPtr, order.getInstrument());
 
-    int remainingQty = orderPtr->getQuantity();
-
-    // Create execution report for each trade
-    for (const auto& trade : trades) {
-        ExecutionReport tradeReport(
-            order.getClientOrderId(),
-            orderId,
-            order.getInstrument(),
-            order.getSide(),
-            trade.getPrice(),
-            trade.getQuantity(),
-            2, // FILLED (each trade is a partial fill execution)
-            "",
-            getCurrentTime()
-        );
-        reports.push_back(tradeReport);
-    }
-
-    // Create final execution report for remaining quantity
-    if (remainingQty > 0) {
-        int finalStatus;
-        if (remainingQty < originalQty) {
-            finalStatus = 3; // PARTIALLY_FILLED
-        } else {
-            finalStatus = 0; // NEW (no matches, added to book)
-        }
-
-        ExecutionReport finalReport(
-            order.getClientOrderId(),
-            orderId,
-            order.getInstrument(),
-            order.getSide(),
-            order.getPrice(),
-            remainingQty,
-            finalStatus,
-            "",
-            getCurrentTime()
-        );
-        reports.push_back(finalReport);
-    } else if (trades.empty()) {
-        // If no trades occurred but no remaining qty (shouldn't happen), report as FILLED
-        ExecutionReport finalReport(
+    // Emit execution reports exactly as specified.
+    // - No match => one "New" report for the aggressive order (full original quantity).
+    // - Each match event => immediately emit 2 reports (aggressive + passive), with correct Fill/PFill.
+    if (trades.empty()) {
+        ExecutionReport newReport(
             order.getClientOrderId(),
             orderId,
             order.getInstrument(),
             order.getSide(),
             order.getPrice(),
             originalQty,
-            2, // FILLED
+            "New",
             "",
             getCurrentTime()
         );
-        reports.push_back(finalReport);
+        reports.push_back(newReport);
+        return;
+    }
+
+    for (const auto& trade : trades) {
+        const std::string ts = getCurrentTime();
+
+        // Aggressive (incoming) side execution report
+        ExecutionReport aggressiveReport(
+            trade.getAggressiveClientOrderId(),
+            trade.getAggressiveOrderId(),
+            order.getInstrument(),
+            trade.getAggressiveSide(),
+            trade.getExecutionPrice(), // execution price is always passive's price
+            trade.getMatchedQuantity(),
+            trade.getAggressiveRemainingAfter() == 0 ? "Fill" : "PFill",
+            "",
+            ts
+        );
+        reports.push_back(aggressiveReport);
+
+        // Passive (resting) side execution report
+        ExecutionReport passiveReport(
+            trade.getPassiveClientOrderId(),
+            trade.getPassiveOrderId(),
+            order.getInstrument(),
+            trade.getPassiveSide(),
+            trade.getExecutionPrice(), // execution price is always passive's price
+            trade.getMatchedQuantity(),
+            trade.getPassiveRemainingAfter() == 0 ? "Fill" : "PFill",
+            "",
+            ts
+        );
+        reports.push_back(passiveReport);
     }
 }
 

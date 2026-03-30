@@ -10,7 +10,7 @@ private:
     int mSide;   // 1: buy, 2:sell
     double mPrice;
     int mQuantity;
-    int mStatus;
+    std::string mStatus; // New, Fill, PFill, Rejected
     std::string mReason;
     std::string mTransactionTime;
 
@@ -22,7 +22,7 @@ public:
                     int side,
                     double price,
                     int quantity,
-                    int status,
+                    const std::string& status,
                     const std::string& reason,
                     const std::string& transactionTime)
         : mClientOrderId(clientOrderId),
@@ -42,7 +42,7 @@ public:
     int getSide() const { return mSide; }
     double getPrice() const { return mPrice; }
     int getQuantity() const { return mQuantity; }
-    int getStatus() const { return mStatus; }
+    std::string getStatus() const { return mStatus; }
     std::string getReason() const { return mReason; }
     std::string getTransactionTime() const { return mTransactionTime; }
 };
