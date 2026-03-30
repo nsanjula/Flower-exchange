@@ -1,8 +1,0 @@
-[
-{
-  "directory": "D:/Projects/Flower exchange/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe   -g -std=gnu++17 -o CMakeFiles\\exchange.dir\\src\\main.cpp.obj -c \"D:\\Projects\\Flower exchange\\src\\main.cpp\"",
-  "file": "D:/Projects/Flower exchange/src/main.cpp",
-  "output": "CMakeFiles/exchange.dir/src/main.cpp.obj"
-}
-]

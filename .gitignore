@@ -1,0 +1,4 @@
+.vscode
+.clang-format
+.builder/config/data.json
+build/
