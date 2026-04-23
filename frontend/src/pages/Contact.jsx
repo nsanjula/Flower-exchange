@@ -39,12 +39,12 @@ export default function Contact() {
 
             <div className="bg-card p-6 rounded-lg shadow-md text-center">
               <h3 className="text-lg font-bold text-primary mb-2">Phone</h3>
-              <p className="text-text-dark">+1 (555) 123-4567</p>
+              <p className="text-text-dark">+94 71 965 0377</p>
             </div>
 
             <div className="bg-card p-6 rounded-lg shadow-md text-center">
               <h3 className="text-lg font-bold text-primary mb-2">Location</h3>
-              <p className="text-text-dark">San Francisco, CA 94102</p>
+              <p className="text-text-dark">Colombo, Sri Lanka</p>
             </div>
           </div>
 

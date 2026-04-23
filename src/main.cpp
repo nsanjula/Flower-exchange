@@ -32,15 +32,7 @@ int main(int argc, char* argv[]) {
         // Step 1: Parse CSV
         std::vector<Order> orders = CSVParser::parse(inputFile);
 
-        for (const auto& order : orders) {
-            std::cout << order.getClientOrderId() << "\n";
-            std::cout << order.getInstrument() << "\n";
-            std::cout << order.getPrice() << "\n";
-            std::cout << order.getQuantity() << "\n";
-            std::cout << order.getSide() << "\n";
-            std::cout << order.getSequence() << "\n";
-            std::cout << "\n";
-        }
+
 
         if (orders.empty()) {
             std::cerr << "ERROR: No orders found in input file.\n";  

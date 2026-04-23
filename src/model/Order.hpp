@@ -14,9 +14,9 @@ class Order {
 
     public:
         // Getters
-        std::string getClientOrderId() const { return mClientOrderId; }
-        std::string getOrderId() const { return mOrderId; }
-        std::string getInstrument() const { return mInstrument; }
+        const std::string& getClientOrderId() const { return mClientOrderId; }
+        const std::string& getOrderId() const { return mOrderId; }
+        const std::string& getInstrument() const { return mInstrument; }
         int getSide() const { return mSide; }
         double getPrice() const { return mPrice; }
         int getQuantity() const { return mQuantity; }
