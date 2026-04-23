@@ -2,44 +2,6 @@ exchange-project/
 │
 ├── src/
 │   ├── main.cpp
-│
-│   ├── Exchange.hpp
-│   ├── Exchange.cpp
-│
-│   ├── MatchingEngine.hpp
-│   ├── MatchingEngine.cpp
-│
-│   ├── OrderBook.hpp
-│   ├── OrderBook.cpp
-│
-│   ├── Order.hpp
-│   ├── ExecutionReport.hpp
-│
-│   ├── OrderValidator.hpp
-│   ├── OrderValidator.cpp
-│
-│   ├── CSVParser.hpp
-│   ├── CSVParser.cpp
-│
-│   ├── ExecutionReportWriter.hpp
-│   └── ExecutionReportWriter.cpp
-│
-├── data/
-│   └── orders.csv
-│
-├── output/
-│   └── execution_report.csv
-│
-├── CMakeLists.txt
-└── README.md
-
-
-
-
-exchange-project/
-│
-├── src/
-│   ├── main.cpp
 │   │
 │   ├── exchange/
 │   │   ├── Exchange.hpp
