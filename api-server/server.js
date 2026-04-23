@@ -194,7 +194,6 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Flower Exchange API is running' });
 });
 
-// ─── Start ────────────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
   console.log(`🌸 Flower Exchange API Server running on http://localhost:${PORT}`);
   console.log(`✓ POST /api/orders       — Submit JSON orders → exchange.exe`);
