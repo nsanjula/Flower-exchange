@@ -9,7 +9,6 @@ const { spawn } = require('child_process');
 const app = express();
 const PORT = 8080;
 
-// ─── Paths (relative to project root, one level above api-server/) ───────────
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const DATA_DIR     = path.join(PROJECT_ROOT, 'data');
 const OUTPUT_DIR   = path.join(PROJECT_ROOT, 'output');
