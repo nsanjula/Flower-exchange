@@ -38,13 +38,13 @@ public:
           matchedQuantity(matchedQty) {}
 
     // Getters
-    std::string getAggressiveClientOrderId() const { return aggressiveClientOrderId; }
-    std::string getAggressiveOrderId() const { return aggressiveOrderId; }
+    const std::string& getAggressiveClientOrderId() const { return aggressiveClientOrderId; }
+    const std::string& getAggressiveOrderId() const { return aggressiveOrderId; }
     int getAggressiveSide() const { return aggressiveSide; }
     int getAggressiveRemainingAfter() const { return aggressiveRemainingAfter; }
 
-    std::string getPassiveClientOrderId() const { return passiveClientOrderId; }
-    std::string getPassiveOrderId() const { return passiveOrderId; }
+    const std::string& getPassiveClientOrderId() const { return passiveClientOrderId; }
+    const std::string& getPassiveOrderId() const { return passiveOrderId; }
     int getPassiveSide() const { return passiveSide; }
     int getPassiveRemainingAfter() const { return passiveRemainingAfter; }
 

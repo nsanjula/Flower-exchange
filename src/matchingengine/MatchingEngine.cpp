@@ -11,7 +11,7 @@ std::vector<Trade> MatchingEngine::processOrder(std::shared_ptr<Order> incoming,
 
     OrderBook& orderBook = orderBooks[instrument];
 
-    while (orderBook.hasMatch(*incoming)) {
+    while (incoming->getQuantity() > 0 && orderBook.hasMatch(*incoming)) {
 
         if (incoming->getSide() == 1) { // BUY
             auto bestSell = orderBook.getBestSell();

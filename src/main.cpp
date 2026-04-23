@@ -7,12 +7,17 @@
 #include <vector>
 #include <stdexcept>
 
-int main() {
+int main(int argc, char* argv[]) {
     std::string filename;
 
-    // Get input filename from user
-    std::cout << "Enter input CSV filename (e.g., test_case_1_basic.csv): ";
-    std::getline(std::cin, filename);
+    if (argc > 1) {
+        // Programmatic mode: filename passed as command-line argument
+        filename = argv[1];
+    } else {
+        // Interactive mode: prompt the user
+        std::cout << "Enter input CSV filename (e.g., test_case_1_basic.csv): ";
+        std::getline(std::cin, filename);
+    }
 
     if (filename.empty()) {
         std::cerr << "ERROR: Filename cannot be empty.\n";
@@ -27,15 +32,7 @@ int main() {
         // Step 1: Parse CSV
         std::vector<Order> orders = CSVParser::parse(inputFile);
 
-        for (const auto& order : orders) {
-            std::cout << order.getClientOrderId() << "\n";
-            std::cout << order.getInstrument() << "\n";
-            std::cout << order.getPrice() << "\n";
-            std::cout << order.getQuantity() << "\n";
-            std::cout << order.getSide() << "\n";
-            std::cout << order.getSequence() << "\n";
-            std::cout << "\n";
-        }
+
 
         if (orders.empty()) {
             std::cerr << "ERROR: No orders found in input file.\n";  
